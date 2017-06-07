@@ -14,41 +14,41 @@ class wechatCallbackapiTest
 {
     public $AppId ="wx641707d466cea6a0";
     public $AppSecret ="3d11dcf677675860759059dd4b304ead";
-    public $menu = <<<JSON
-{
-   "button":[
-   {
-        "type":"click",
-        "name":"最新消息",
-        "key":"NEWS"
-    },
-    {
-        "type":"click",
-        "name":"整点音乐",
-        "key":"COME_SOME_MUSIC"
-    },
-    {
-         "name":"微信资源",
-         "sub_button":[
-         {
-             "type":"view",
-             "name":"搜索",
-             "url":"http://www.soso.com/"
-          },
-          {
-             "type":"view",
-             "name":"视频",
-             "url":"http://v.qq.com/"
-          },
-          {
-             "type":"click",
-             "name":"赞一下我们",
-             "key":"V1001_GOOD"
-          }]
-     }]
-}
-JSON
-;
+//     public $menu = <<<JSON
+// {
+//    "button":[
+//    {
+//         "type":"click",
+//         "name":"最新消息",
+//         "key":"NEWS"
+//     },
+//     {
+//         "type":"click",
+//         "name":"整点音乐",
+//         "key":"COME_SOME_MUSIC"
+//     },
+//     {
+//          "name":"微信资源",
+//          "sub_button":[
+//          {
+//              "type":"view",
+//              "name":"搜索",
+//              "url":"http://www.soso.com/"
+//           },
+//           {
+//              "type":"view",
+//              "name":"视频",
+//              "url":"http://v.qq.com/"
+//           },
+//           {
+//              "type":"click",
+//              "name":"赞一下我们",
+//              "key":"V1001_GOOD"
+//           }]
+//      }]
+// }
+// JSON
+// ;
     public function valid()
     {
         $echoStr = $_GET["echostr"];
@@ -58,15 +58,15 @@ JSON
             exit;
         }
     }
-    public function getAccessToken($AppId,$AppSecret){
+    // public function getAccessToken($AppId,$AppSecret){
     
-        $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={$Appid}&secret={$Appsecret}";
-        //但是现在PHP里面,如何让PHP请求这个地址，//(1) file_get_contents();
-        $result = file_get_contents($url);
-        $arr = json_decode($result,true);
-        $api_url = $arr['access_token'];
-        return $response_content = $this->_POST($api_url, $menu);
-    }
+    //     $url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={$Appid}&secret={$Appsecret}";
+    //     //但是现在PHP里面,如何让PHP请求这个地址，//(1) file_get_contents();
+    //     $result = file_get_contents($url);
+    //     $arr = json_decode($result,true);
+    //     $api_url = $arr['access_token'];
+    //     return $response_content = $this->_POST($api_url, $menu);
+    // }
     public function responseMsg(){
 
         $postStr = $GLOBALS['HTTP_RAW_POST_DATA'];
