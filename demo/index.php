@@ -13,7 +13,7 @@ if (isset($_GET['echostr'])) {
 class wechatCallbackapiTest
 {
     public $AppId ="wx641707d466cea6a0";
-    public $AppSecret ="560ef21d956115fee4a87160d7dbdd9d";
+    public $AppSecret ="3d11dcf677675860759059dd4b304ead";
     public $menu = <<<JSON
 {
    "button":[
